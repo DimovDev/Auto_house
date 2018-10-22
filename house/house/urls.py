@@ -13,9 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from rest_framework_swagger.views import get_swagger_view
+
+from django.conf import settings
+from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
+from rest_framework.schemas import get_schema_view
+
+# schema_view = get_schema_view(title="EXAM_REST_API")
+
+schema_view = get_swagger_view(title='EXAM_REST_API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include('api.urls')),
+    # url(r'^$', schema_view), url(r'^cart/', include('cart.urls', namespace='cart')),
+    # url(r'^orders/', include('orders.urls', namespace='orders')),
+
+    url('^schema$', schema_view),
+    url(r'^$', schema_view),
 ]

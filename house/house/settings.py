@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.schemas',
     'api',
     'users',
+    'vehicles',
 ]
 
 MIDDLEWARE = [
