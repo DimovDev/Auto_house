@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from users import models
 
-from vehicles.models import Vehicles, Category
+
 
 
 class HelloSerializer(serializers.Serializer):
@@ -38,6 +38,8 @@ class ProfileFeedItemSerializer(serializers.ModelSerializer):
         model = models.StatusUpdate
         fields = ('id', 'user_profile', 'status_text', 'created_on')
         extra_kwargs = {'user_profile': {'read_only': True}}
+
+
 
 
 

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..vehicles.views import Category ,Vehicles
+from .models import Category ,Vehicles
 
 
 class VehiclesSerializer(serializers.ModelSerializer):

@@ -12,13 +12,12 @@ from rest_framework.authentication import TokenAuthentication
 # from api.cart.serializers import CartSerializer
 # from api.shop.models import Product, Category
 # from .vehicles.serializers import VehiclesSerializer, CategorySerializer
-from api.vehicles.serializers import VehiclesSerializer, CategorySerializer
-from house.vehicles.models import Vehicles,Category
-from . import serializers
+
+
 from rest_framework import status
 
 # Django viewset
-from rest_framework import viewsets
+from rest_framework import viewsets,serializers
 
 from users import models
 from . import permissions
